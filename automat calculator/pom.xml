@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId> <!-- Replace with your actual artifact ID -->
+    <version>1.0</version>
+    <packaging>war</packaging> <!-- Specify WAR packaging -->
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.3</version>
+    </parent>
+    <properties>
+        <java.version>17</java.version> <!-- Specify your Java version -->
+        <spring.boot.version>3.2.5</spring.boot.version> <!-- Latest Spring Boot version -->
+        <jakarta.servlet.version>6.0.0</jakarta.servlet.version> <!-- Latest Jakarta Servlet version -->
+        <spring.security.version>6.1.0</spring.security.version> <!-- Latest Spring Security version -->
+        <junit.jupiter.version>5.9.3</junit.jupiter.version> <!-- Latest JUnit version -->
+        <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version> <!-- Latest Surefire Plugin version -->
+    </properties>
+
+    <dependencies>
+
+        <!-- Spring Boot Starter Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <!-- Spring Security Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>net.bull.javamelody</groupId>-->
+<!--            <artifactId>javamelody-core</artifactId>-->
+<!--&lt;!&ndash;            <version></version> &lt;!&ndash; Check for the latest compatible version &ndash;&gt;&ndash;&gt;-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>net.bull.javamelody</groupId>-->
+<!--            <artifactId>javamelody-core</artifactId>-->
+<!--            <version>1.90.0</version> &lt;!&ndash; Adjust the version if needed &ndash;&gt;-->
+<!--        </dependency>-->
+
+
+        <!-- Jakarta Servlet API -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JUnit Jupiter for testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit Jupiter Engine for running tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Boot Starter Test with specified version -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version> <!-- Added version here -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.bull.javamelody</groupId>
+            <artifactId>javamelody-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <!-- Build configuration for Maven plugins -->
+    <build>
+
+        <!-- Plugin management for Maven plugins used in the build process-->
+        <plugins>
+
+            <!-- Spring Boot Maven Plugin for packaging and running the application-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <!-- Remove execution to allow WAR packaging -->
+                <!--<executions><execution><goals><goal>repackage</goal></goals></execution></executions>-->
+            </plugin>
+
+            <!-- Maven Compiler Plugin to set Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version><!-- Ensure you have a recent version -->
+                <configuration>
+                    <source>${java.version}</source><!-- Set source version -->
+                    <target>${java.version}</target><!-- Set target version -->
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version><!-- Use the specified Surefire Plugin version -->
+                <!-- Additional configuration options can go here if needed -->
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>

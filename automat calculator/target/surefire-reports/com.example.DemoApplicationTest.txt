@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.example.DemoApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 0.050 s <<< FAILURE! -- in com.example.DemoApplicationTest
+com.example.DemoApplicationTest.testCSRFtokenFail -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.ArithmeticException: Division by zero is not allowed for percentage calculation.
+	at com.example.DemoApplication.per(DemoApplication.java:29)
+	at com.example.DemoApplicationTest.testCSRFtokenFail(DemoApplicationTest.java:90)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.DemoApplicationTest.testMulFail -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: -1 * -2 * 3 should not equal 6 ==> expected: not equal but was: <6>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertNotEquals.failEqual(AssertNotEquals.java:277)
+	at org.junit.jupiter.api.AssertNotEquals.assertNotEquals(AssertNotEquals.java:94)
+	at org.junit.jupiter.api.Assertions.assertNotEquals(Assertions.java:2020)
+	at com.example.DemoApplicationTest.testMulFail(DemoApplicationTest.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.DemoApplicationTest.testDivFail -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 9 / 3 / 1 should not equal 3 ==> expected: not equal but was: <3.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertNotEquals.failEqual(AssertNotEquals.java:277)
+	at org.junit.jupiter.api.AssertNotEquals.assertNotEquals(AssertNotEquals.java:194)
+	at org.junit.jupiter.api.Assertions.assertNotEquals(Assertions.java:2523)
+	at com.example.DemoApplicationTest.testDivFail(DemoApplicationTest.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
